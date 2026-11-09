@@ -53,7 +53,7 @@ export const techStacks = [
   { language: "MongoDB", color: "#47a248", Icon: SiMongodb },
   { language: "Git", color: "#f05032", Icon: FaGitAlt },
   { language: "GitHub", color: "#ffffff", Icon: FaGithub },
-  { language: "pandas", color: "#a78bfa", Icon: SiPandas },
+  { language: "pandas", color: "#D4D4D4", Icon: SiPandas },
   { language: "NumPy", color: "#4dabcf", Icon: SiNumpy },
   { language: "Jupyter", color: "#f37626", Icon: SiJupyter },
   { language: "Excel", color: "#21a366", Icon: FaFileExcel },
