@@ -130,6 +130,12 @@ export default function FullWidthTabs() {
     fetchData();
   }, [fetchData]);
 
+  useEffect(() => {
+    const openCertificates = () => setValue(1);
+    window.addEventListener("openCertificates", openCertificates);
+    return () => window.removeEventListener("openCertificates", openCertificates);
+  }, []);
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };

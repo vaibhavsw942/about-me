@@ -43,7 +43,7 @@ const MainTitle = memo(() => (
       <span className="relative inline-block mt-2">
         <span className="absolute -inset-2 bg-gradient-to-r from-[#E5E5E5] to-[#A3A3A3] blur-2xl opacity-20"></span>
         <span className="relative bg-gradient-to-r from-[#E5E5E5] to-[#A3A3A3] bg-clip-text text-transparent">
-          Developer
+          AI &amp; Data
         </span>
       </span>
     </h1>
@@ -94,8 +94,8 @@ const SocialLink = memo(({ icon: Icon, link }) => (
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["MCA Student", "Java & Python Developer", "Data Analytics Enthusiast"];
-const TECH_STACK = ["Java", "Python", "SQL", "MongoDB"];
+const WORDS = ["AI Engineer", "ML Engineer", "Data Scientist"];
+const TECH_STACK = ["Python", "SQL", "Pandas", "NumPy"];
 const SOCIAL_LINKS = [
   { icon: Github, link: "https://github.com/vaibhavsw942" },
   { icon: Linkedin, link: "https://www.linkedin.com/in/vaibhavsw942/" },
@@ -211,9 +211,10 @@ const Home = () => {
                   data-aos="fade-up"
                   data-aos-delay="1000"
                 >
-                  Hi, I'm Vaibhav Suryawanshi, an MCA student who builds
-                  practical apps with Java and Python and explores data
-                  analysis with SQL, pandas and NumPy.
+                  Hi, I'm Vaibhav Suryawanshi, an MCA student working toward
+                  roles as an AI Engineer, ML Engineer and Data Scientist. I
+                  build with Python, SQL, pandas and NumPy, and I'm growing my
+                  skills in machine learning and applied AI.
                 </p>
 
                 {/* Tech Stack */}

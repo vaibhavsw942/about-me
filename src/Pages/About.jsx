@@ -8,6 +8,9 @@ import {
   ArrowUpRight,
   Sparkles,
   UserCheck,
+  Brain,
+  Cpu,
+  BarChart3,
 } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -69,6 +72,38 @@ const ProfileImage = memo(() => (
         </div>
       </div>
     </div>
+  </div>
+));
+
+const ROLES = [
+  {
+    icon: Brain,
+    title: "AI Engineer",
+    text: "Exploring generative AI and building AI-assisted workflows with Python.",
+  },
+  {
+    icon: Cpu,
+    title: "ML Engineer",
+    text: "Learning to prepare data, train and evaluate machine learning models.",
+  },
+  {
+    icon: BarChart3,
+    title: "Data Scientist",
+    text: "Turning raw data into insights with SQL, Python and analytics tools.",
+  },
+];
+
+const RoleCard = memo(({ icon: Icon, title, text }) => (
+  <div
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    className="bg-gray-900/50 rounded-2xl p-6 border border-white/10 h-full flex flex-col gap-4 transition-all duration-300 hover:border-white/20"
+  >
+    <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/10">
+      <Icon className="w-6 h-6 text-white" />
+    </div>
+    <h3 className="text-xl font-semibold text-white">{title}</h3>
+    <p className="text-sm text-gray-400 leading-relaxed">{text}</p>
   </div>
 ));
 
@@ -234,7 +269,7 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              I'm an MCA student at Navsahyadri Group of Institutes, Pune (Savitribai Phule Pune University), with a BCS degree (Grade A+) from Dr. Babasaheb Ambedkar Marathwada University. I enjoy building practical software, from a native Android alarm app in Java to data analysis in Python with pandas and NumPy. I have completed certifications from Google, IBM, Meta and NASSCOM FutureSkills Prime, and I'm looking for opportunities to learn and grow as a developer.
+              I'm an MCA student at Navsahyadri Group of Institutes, Pune (Savitribai Phule Pune University), with a BCS degree (Grade A+) from Dr. Babasaheb Ambedkar Marathwada University. I'm building my career toward AI Engineer, ML Engineer and Data Scientist roles, with a strong base in Python, SQL, pandas and NumPy. I have completed certifications from Google, IBM, Microsoft and NASSCOM FutureSkills Prime, including a Gold-level Full Stack Data Science and AI program, and I'm looking for opportunities to learn and grow in data and AI.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
@@ -252,13 +287,17 @@ const AboutPage = () => {
                   <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
                 </button>
               </a>
-              <a href="#Portofolio" className="w-full lg:w-auto">
+              <a
+                href="#Portofolio"
+                className="w-full lg:w-auto"
+                onClick={() => window.dispatchEvent(new Event("openCertificates"))}
+              >
                 <button
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#A3A3A3]/50 text-[#A3A3A3] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#A3A3A3]/10 animate-bounce-slow delay-200"
                 >
-                  <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5" /> View Certificates
                 </button>
               </a>
             </div>
@@ -267,8 +306,14 @@ const AboutPage = () => {
           <ProfileImage />
         </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+          {ROLES.map((role) => (
+            <RoleCard key={role.title} {...role} />
+          ))}
+        </div>
+
         <a href="#Portofolio">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 cursor-pointer">
             {statsData.map((stat) => (
               <StatCard key={stat.label} {...stat} />
             ))}
